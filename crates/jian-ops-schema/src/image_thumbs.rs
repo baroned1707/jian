@@ -450,6 +450,35 @@ mod tests {
     }
 
     #[test]
+    fn thumbs_follow_slot() {
+        // A host that keeps several documents open parks each one's registry
+        // with it: capture before leaving, restore on return.
+        with_test_serialized(|| {
+            replace_from_load(Default::default());
+            store_thumb(41, JPEG.to_vec());
+            let slot_a = capture_snapshot();
+
+            replace_from_load(Default::default());
+            store_thumb(99, vec![1, 2, 3]);
+            let slot_b = capture_snapshot();
+
+            restore_snapshot(slot_a.clone());
+            assert!(thumb_for(41).is_some());
+            assert!(thumb_for(99).is_none(), "B's thumbs do not leak into A");
+
+            restore_snapshot(slot_b);
+            assert!(thumb_for(99).is_some());
+            assert!(thumb_for(41).is_none(), "A's thumbs do not leak into B");
+
+            // Capturing shares the encoded bytes rather than copying them, and
+            // a snapshot stays valid after the live registry moves on.
+            restore_snapshot(slot_a);
+            let first = thumb_for(41).expect("A's thumbnail is back");
+            assert!(Arc::ptr_eq(&first, &thumb_for(41).unwrap()));
+        });
+    }
+
+    #[test]
     fn oversized_and_malformed_thumbnails_never_enter_the_registry() {
         with_test_serialized(|| {
             replace_from_load(Default::default());
