@@ -564,6 +564,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "width": {
               "anyOf": [
                 {
@@ -962,6 +973,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "width": {
               "anyOf": [
                 {
@@ -1359,6 +1381,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "width": {
               "anyOf": [
@@ -1825,6 +1858,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -2122,6 +2166,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             }
           }
         },
@@ -2420,6 +2475,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -2777,6 +2843,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -3174,6 +3251,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -3548,6 +3636,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -3938,6 +4037,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -4251,6 +4361,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -4628,6 +4749,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -4984,6 +5116,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -5326,6 +5469,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -5675,6 +5829,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -6040,6 +6205,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -6388,6 +6564,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -6780,6 +6967,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -7135,6 +7333,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "minWidth": {
               "type": [
@@ -7496,6 +7705,17 @@
                 "$ref": "#/definitions/NodeAnimation"
               }
             },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "minWidth": {
               "type": [
                 "number",
@@ -7780,6 +8000,17 @@
               "items": {
                 "$ref": "#/definitions/NodeAnimation"
               }
+            },
+            "imageCredit": {
+              "description": "Provenance and licence of an image placed on this node. Absent for nodes that carry no third-party image.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ImageCredit"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             }
           }
         }
@@ -8792,6 +9023,45 @@
         "forwards",
         "none"
       ]
+    },
+    "ImageCredit": {
+      "description": "Where an image on this node came from and under which licence, so the credit a licence asks for survives save and load. Only the provider is required; every other field is whatever the source reported.",
+      "type": "object",
+      "required": [
+        "provider"
+      ],
+      "properties": {
+        "provider": {
+          "description": "Stable provider id, e.g. `openverse`, `wikimedia`, `pixabay`.",
+          "type": "string"
+        },
+        "creator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license": {
+          "description": "Short licence name, e.g. `CC BY 4.0`.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "licenseUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sourcePageUrl": {
+          "description": "The page the image was found on.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
     },
     "SizingBehavior": {
       "description": "Sizing value: a number, a fixed keyword, or an arbitrary string (typically `$variable` ref).",

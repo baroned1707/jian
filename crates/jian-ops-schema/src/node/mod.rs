@@ -25,7 +25,7 @@ pub mod text_area;
 pub mod text_input;
 pub mod video;
 
-pub use base::{BoolOrExpression, MaskType, NumberOrExpression, PenNodeBase};
+pub use base::{BoolOrExpression, ImageCredit, MaskType, NumberOrExpression, PenNodeBase};
 pub use checkbox::CheckboxNode;
 pub use container::{
     AlignItems, ContainerProps, CornerRadius, JustifyContent, LayoutMode, Padding,

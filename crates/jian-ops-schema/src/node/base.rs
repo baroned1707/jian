@@ -34,6 +34,28 @@ pub enum MaskType {
     Luminance,
 }
 
+/// Where an image on this node came from and under which licence, so the
+/// credit a licence asks for survives save and load. Only the provider is
+/// required; every other field is whatever the source reported.
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize, schemars::JsonSchema)]
+#[cfg_attr(feature = "export-ts", derive(ts_rs::TS))]
+#[cfg_attr(feature = "export-ts", ts(export, export_to = "ops.ts"))]
+#[serde(rename_all = "camelCase")]
+pub struct ImageCredit {
+    /// Stable provider id, e.g. `openverse`, `wikimedia`, `pixabay`.
+    pub provider: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub creator: Option<String>,
+    /// Short licence name, e.g. `CC BY 4.0`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub license: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub license_url: Option<String>,
+    /// The page the image was found on.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_page_url: Option<String>,
+}
+
 /// Shared fields across all node types.
 /// Note: concrete nodes use `#[serde(flatten)]` to embed `PenNodeBase`.
 #[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize, schemars::JsonSchema)]
@@ -87,11 +109,30 @@ pub struct PenNodeBase {
     pub transition: Option<crate::motion::Transition>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub animations: Option<Vec<crate::motion::NodeAnimation>>,
+    /// Provenance and licence of an image placed on this node. Absent for
+    /// nodes that carry no third-party image.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub image_credit: Option<ImageCredit>,
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn image_credit_is_additive_and_round_trips() {
+        let json = r#"{"id":"n","imageCredit":{"provider":"openverse","creator":"A","license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","sourcePageUrl":"https://example.org/p"}}"#;
+        let base: PenNodeBase = serde_json::from_str(json).unwrap();
+        let credit = base.image_credit.as_ref().expect("credit");
+        assert_eq!(credit.provider, "openverse");
+        assert_eq!(credit.license.as_deref(), Some("CC BY 4.0"));
+        assert_eq!(serde_json::to_string(&base).unwrap(), json);
+        // A file written before this field existed still loads, and a node
+        // without a credit writes nothing for it.
+        let plain: PenNodeBase = serde_json::from_str(r#"{"id":"n"}"#).unwrap();
+        assert_eq!(plain.image_credit, None);
+        assert_eq!(serde_json::to_string(&plain).unwrap(), r#"{"id":"n"}"#);
+    }
 
     #[test]
     fn minimal_base_roundtrip() {
